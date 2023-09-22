@@ -1,14 +1,14 @@
 <header class="header">
     <div class="container">
         <div class="header__content">
-            <a href="#">
+            <a href="./index.php">
                 <img src="./img/logo.png" alt="logo.png">
             </a>
 
             <nav class="header__navigation">
                 <ul>
                     <li>
-                        <a href="#">Home</a>
+                        <a href="./index.php">Home</a>
                     </li>
                     <li>
                         <a href="#">Shop</a>

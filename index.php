@@ -16,10 +16,12 @@
 </head>
 
 <body>
-    <?php
-    $mysql = new mysqli('localhost', 'root', '', 'shopBD');
-    $mysql->query("SET NAMES 'utf8'");
 
+    
+
+    <?php
+    require('./db.php');
+    
     $result = $mysql->query("SELECT id,title,price,brand,image FROM clothes");
 
 
