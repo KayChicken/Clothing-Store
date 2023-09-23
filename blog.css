@@ -1,0 +1,60 @@
+.blog {
+    margin-top: 60px;
+}
+
+.blog__content {
+    display: flex;
+    column-gap: 20px;
+    row-gap: 30px;
+    justify-content: space-between;
+}
+
+.blog__container {
+    max-width: 350px;
+}
+
+.blog__container img {
+    display: block;
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: 50% 25%;
+    width: 100%;
+}
+
+.blog__data {
+    margin-top: 10px;
+}
+
+.blog__title {
+    margin-top: 10px;
+}
+
+.blog__desc {
+    margin-top: 5px;
+    width: 100%; 
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Установите желаемое количество строк (в данном случае 2) */
+    -webkit-box-orient: vertical;
+    
+}
+
+
+
+@media (max-width : 920px) {
+    .blog__content {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 20px;
+        justify-content: center;
+       
+    }
+
+    .blog__container {
+        max-width: 350px;
+    }
+
+
+    
+}

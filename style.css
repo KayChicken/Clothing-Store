@@ -68,9 +68,27 @@ li {
 }
 
 .header__navigation ul a {
-
+    position: relative;
     font-weight: 500;
     font-size: 1.4rem;
+}
+
+
+.header__navigation ul a.active {
+    color: #098176;
+}
+
+
+.header__navigation ul a.active::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #098176;
+    
+
 }
 
 

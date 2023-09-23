@@ -5,22 +5,23 @@
                 <img src="./img/logo.png" alt="logo.png">
             </a>
 
+
             <nav class="header__navigation">
                 <ul>
                     <li>
-                        <a href="./index.php">Home</a>
+                        <a href="./index.php" class="<?php echo ($_SERVER['SCRIPT_NAME'] == '/index.php') ? 'active' : ''; ?>">Home</a>
                     </li>
                     <li>
-                        <a href="#">Shop</a>
+                        <a href="./shop.php" class="<?php echo ($_SERVER['SCRIPT_NAME'] == '/shop.php') ? 'active' : ''; ?>">Shop</a>
                     </li>
                     <li>
-                        <a href="#">Blog</a>
+                        <a href="./blog.php" class="<?php echo ($_SERVER['SCRIPT_NAME'] == '/blog.php') ? 'active' : ''; ?>">Blog</a>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <a href="#" class="<?php echo ($_SERVER['SCRIPT_NAME'] == '/about.php') ? 'active' : ''; ?>">About</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#" class="<?php echo ($_SERVER['SCRIPT_NAME'] == '/contact.php') ? 'active' : ''; ?>">Contact</a>
                     </li>
 
                 </ul>
