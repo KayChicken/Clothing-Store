@@ -29,21 +29,27 @@
                         <img src="./img/blog/b1.jpg" alt="blog.img" class="blog__img">
                         <p class="blog__data">12 November, 2023</p>
                         <h1 class="blog__title">My First Blog</h1>
-                        <p class="blog__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi ducimus iste id iure eius quibusdam quaerat nulla, unde quasi neque voluptate, expedita consequuntur quo natus provident nemo perferendis optio. Quasi?</p>
+                        <p class="blog__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi ducimus
+                            iste id iure eius quibusdam quaerat nulla, unde quasi neque voluptate, expedita consequuntur
+                            quo natus provident nemo perferendis optio. Quasi?</p>
                     </div>
 
                     <div class="blog__container">
                         <img src="./img/blog/b1.jpg" alt="blog.img" class="blog__img">
                         <p class="blog__data">12 November, 2023</p>
                         <h1 class="blog__title">My First Blog</h1>
-                        <p class="blog__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi ducimus iste id iure eius quibusdam quaerat nulla, unde quasi neque voluptate, expedita consequuntur quo natus provident nemo perferendis optio. Quasi?</p>
+                        <p class="blog__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi ducimus
+                            iste id iure eius quibusdam quaerat nulla, unde quasi neque voluptate, expedita consequuntur
+                            quo natus provident nemo perferendis optio. Quasi?</p>
                     </div>
 
                     <div class="blog__container">
                         <img src="./img/blog/b1.jpg" alt="blog.img" class="blog__img">
                         <p class="blog__data">12 November, 2023</p>
                         <h1 class="blog__title">My First Blog</h1>
-                        <p class="blog__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi ducimus iste id iure eius quibusdam quaerat nulla, unde quasi neque voluptate, expedita consequuntur quo natus provident nemo perferendis optio. Quasi?</p>
+                        <p class="blog__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi ducimus
+                            iste id iure eius quibusdam quaerat nulla, unde quasi neque voluptate, expedita consequuntur
+                            quo natus provident nemo perferendis optio. Quasi?</p>
                     </div>
                 </div>
             </div>

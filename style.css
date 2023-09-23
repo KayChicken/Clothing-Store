@@ -78,6 +78,9 @@ li {
     color: #098176;
 }
 
+.header__navigation ul a:hover {
+    color: #098176;
+}
 
 .header__navigation ul a.active::after {
     content: '';

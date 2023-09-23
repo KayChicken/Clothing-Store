@@ -18,10 +18,10 @@
                         <a href="./blog.php" class="<?php echo ($_SERVER['SCRIPT_NAME'] == '/blog.php') ? 'active' : ''; ?>">Blog</a>
                     </li>
                     <li>
-                        <a href="#" class="<?php echo ($_SERVER['SCRIPT_NAME'] == '/about.php') ? 'active' : ''; ?>">About</a>
+                        <a href="./about.php" class="<?php echo ($_SERVER['SCRIPT_NAME'] == '/about.php') ? 'active' : ''; ?>">About</a>
                     </li>
                     <li>
-                        <a href="#" class="<?php echo ($_SERVER['SCRIPT_NAME'] == '/contact.php') ? 'active' : ''; ?>">Contact</a>
+                        <a href="./contact.php" class="<?php echo ($_SERVER['SCRIPT_NAME'] == '/contact.php') ? 'active' : ''; ?>">Contact</a>
                     </li>
 
                 </ul>
