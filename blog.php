@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="blog__container">
-                        <img src="./img/blog/b1.jpg" alt="blog.img" class="blog__img">
+                        <img src="./img/blog/b2.jpg" alt="blog.img" class="blog__img">
                         <p class="blog__data">12 November, 2023</p>
                         <h1 class="blog__title">My First Blog</h1>
                         <p class="blog__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi ducimus
@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="blog__container">
-                        <img src="./img/blog/b1.jpg" alt="blog.img" class="blog__img">
+                        <img src="./img/blog/b3.jpg" alt="blog.img" class="blog__img">
                         <p class="blog__data">12 November, 2023</p>
                         <h1 class="blog__title">My First Blog</h1>
                         <p class="blog__desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi ducimus

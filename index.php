@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha384-KyZXEAg3QhqLMpG8r+3Lwy6CpTzW5BJqW+9BqI2Z6V6g6I6U5f5un5PCxOEGF8MHL" crossorigin="anonymous">
 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 
 <body>
@@ -21,7 +25,7 @@
 
     <?php
     require('./db.php');
-    
+
     $result = $mysql->query("SELECT id,title,price,brand,image FROM clothes");
 
 
@@ -51,7 +55,7 @@
         <section class="hero">
             <div class="container">
                 <div class="hero__content">
-                    <div class="hero__left">
+                    <div class="hero__left animate__animated animate__backInLeft">
                         <h4 class="hero__offer">Trade-in-offer</h4>
                         <h1 class="hero__title">Super value deals</h1>
                         <h1 class="hero__title">On all products</h1>
@@ -59,7 +63,7 @@
                         <button class="hero__btn">Shop Now</button>
                     </div>
                     <div class="hero__right">
-                        <img src="./img/hero3.webp" alt="hero.webp">
+                        <img src="./img/hero3.webp" alt="hero.webp" class="animate__animated animate__fadeInRight">
                     </div>
                 </div>
             </div>
@@ -713,6 +717,9 @@
     <?php
     require('./components/footer.php')
         ?>
+
+
+    
 </body>
 
 </html>

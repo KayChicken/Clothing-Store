@@ -1,3 +1,15 @@
+<?php
+    if(isset($_POST['add_to_cart'])) {
+        $items = unserialize($_COOKIE['items']);
+        $item = $_GET['item'];
+        $items[] = $item;
+        setcookie('items', serialize($items), time() + 3600, '/');
+    }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,18 +50,25 @@
                             <div class='item__col'>
                                 <h1 class='item__title'>{$row['title']}</h1>
                                 <h2 class='item__price'>\${$row['price']}</h2>
-                                <select class='item__sizes' name='' id=''>
-                                    <option value=''>Select Size</option>
+                                <div class='item__sizes'>
                                 ";
-                              
-                                $sizes = $mysql->query("SELECT size FROM clothes_sizes JOIN sizes ON sizes.id = clothes_sizes.fk_size AND clothes_sizes.fk_clothes = $itemId");
-                                while ($size = $sizes->fetch_assoc()) {
-                                    echo "<option value=''>{$size['size']}</option>";
+                                $sizes_from_db = array();
+                                $all_sizes = array('M',"L","XL","XLL");
+                                $result = $mysql->query("SELECT size FROM clothes_sizes JOIN sizes ON sizes.id = clothes_sizes.fk_size AND clothes_sizes.fk_clothes = $itemId");
+                                while ($size = $result->fetch_assoc()) {
+                                    $sizes_from_db[] = $size['size'];
+                                };
+                                
+                                foreach($all_sizes as $size) {
+                                    $class = in_array($size, $sizes_from_db) ? 'active' : '';
+                                    echo "<div class='item__size {$class}'>{$size}</div>";
                                 };
                                
                                 echo "
-                                </select>
-                                <button class='add__cart'>Add To Cart</button>
+                                </div>
+                                <form method='post' action=''>
+                                    <input class='add__cart' type='submit' value='Add To Cart' name='add_to_cart'>
+                                </form>
                                 <div class='item__details'>
                                     <h2>Product Details</h2>
                                     <p>{$row['details']}</p>
@@ -80,6 +99,7 @@
     <?php
     require('./components/footer.php')
         ?>
+    <script src="cart.js"></script>
 </body>
 
 </html>

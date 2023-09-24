@@ -33,20 +33,7 @@
                             <h1>Who We Are?</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita recusandae nostrum
                                 laboriosam? Fugit, placeat reprehenderit nihil totam delectus excepturi ut voluptas
-                                autem
-                                laboriosam facilis? Repellendus dolorem aliquam autem ducimus sit.
-                                Id error dignissimos odit eaque iusto officia vel nemo veritatis, laudantium qui ducimus
-                                ipsam officiis libero. Quae, sapiente quos atque ea minima aspernatur eligendi
-                                dignissimos
-                                similique iure soluta, ullam quam!
-                                Minima doloribus voluptas tempora, similique eveniet enim cum facilis doloremque ipsam
-                                earum
-                                dolor illum inventore! Saepe, excepturi facere beatae, impedit blanditiis obcaecati esse
-                                ipsum accusantium, culpa nihil facilis sapiente vero.
-                                Voluptatem nam, eligendi doloremque ipsa odit sit, incidunt dignissimos ipsum et nostrum
-                                sint tempore nisi corrupti laborum iure sequi, autem illo debitis est quas eos
-                                voluptatum
-                                repellendus veniam. Ipsum, laborum.</p>
+                                autem.</p>
 
                         </div>
                     </div>
@@ -60,13 +47,7 @@
                             <p>At our online store, we celebrate the art of smart shopping. We understand that every
                                 purchase is an opportunity to make a meaningful choice. With a curated selection of
                                 products that blend quality, style, and value, we empower you to shop
-                                consciously.Discover a world of options that cater to your unique taste and preferences.
-                                From sustainable and eco-friendly choices to high-end fashion that complements your
-                                individual style, we offer a diverse range of products that reflect your personality.Our
-                                commitment to customer satisfaction goes beyond the transaction. We provide informative
-                                guides, detailed product descriptions, and expert reviews to assist you in making
-                                informed decisions. Join us on a journey where every purchase is a reflection of your
-                                discerning taste and a step towards a more thoughtful and sustainable future.
+                                consciously.
                             </p>
 
                         </div>
@@ -81,17 +62,7 @@
                             <p>At our online store, we take pride in our unwavering commitment to quality assurance. We
                                 understand that your trust is earned through consistent excellence, and we go above and
                                 beyond to ensure that every product meets the highest standards.
-                                Our Quality Assurance Guarantee means that every purchase you make is backed by our
-                                dedication to providing you with products of superior quality. From meticulous
-                                craftsmanship to rigorous testing, we leave no stone unturned in our pursuit of
-                                excellence.
-                                When you shop with us, you're not just making a purchase; you're investing in peace of
-                                mind. Our team of experts meticulously inspects each item, ensuring that it not only
-                                meets but exceeds your expectations.
-                                Experience the difference of shopping with confidence. Discover a world where quality is
-                                non-negotiable, and every purchase is a testament to our unwavering commitment to your
-                                satisfaction. Shop with us today and experience the assurance of excellence with every
-                                buy.
+                                
                             </p>
 
                         </div>

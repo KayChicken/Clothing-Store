@@ -98,4 +98,5 @@
         </div>
         <div class="copyright">&copy; 2023, KayChicken</div>
     </div>
+    <script src="../script.js"></script>
 </footer>

@@ -96,6 +96,7 @@ li {
 
 
 .hero {
+    overflow: hidden;
     background-color: var(--backgroundColor);
     position: relative;
     height: 92.3vh;
@@ -138,14 +139,17 @@ li {
 
 .hero__right img {
     position: absolute;
-    display: block;
     max-width: 650px;
     z-index: 1;
     width: 100%;
-    right: 200px;
     bottom: 0;
+    right: 200px;
 
 }
+
+
+
+
 
 
 .hero__btn {
@@ -176,9 +180,7 @@ li {
 
 }
 
-.feature__card img {
-    width: 100%;
-}
+
 
 .feature__card {
     background-color: #fff;
@@ -503,6 +505,9 @@ li {
 }
 
 
+.banner h1 {
+    text-transform: uppercase;
+}
 
 .banner__box1 {
     background-image: url('./img/b17.jpg');

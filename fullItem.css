@@ -47,15 +47,11 @@ section {
 }
 
 
-.item__sizes {
-    padding: 5px 13px;
-    outline: none;
-}
 
 
 .add__cart {
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 20px;
     display: block;
     padding : 10px 15px;
     background-color: #098176;
@@ -78,4 +74,35 @@ section {
 
 .item__img {
     width: 100%;
+}
+
+
+.item__sizes {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.item__size {
+    display: flex;
+    font-size: 1.1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #ebebeb;
+    cursor: pointer;
+    border-radius: 5px;
+    color : #d3d4dd;;
+    width: 40px;
+    height: 40px;
+
+}
+
+.active {
+    color : #fff;
+    font-weight: 700;
+    
+    background-color: #098176;
 }

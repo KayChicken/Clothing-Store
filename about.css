@@ -24,6 +24,30 @@
     flex-direction: row-reverse;
 }
 
+.about__container:nth-child(2n+1) .about__col:nth-child(1):after {
+    content: '';
+    position: absolute;
+    height: 85%;
+    width: 85%;
+    z-index: -1;
+    background-color:#6876e0;
+    top : -15px;
+    right: -15px;
+}
+
+.about__container:nth-child(2n) .about__col:nth-child(1):after {
+    content: '';
+    position: absolute;
+    height: 85%;
+    width: 85%;
+    z-index: -1;
+    background-color: #6876e0;
+    top : -15px;
+    left: -15px;
+}
+
+
+
 
 
 .about__col:nth-child(1) {
@@ -36,6 +60,12 @@
     width: 100%;
     
 }
+
+.about__col {
+    position: relative;
+}
+
+
 
 
 
