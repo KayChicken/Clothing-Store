@@ -1,26 +1,41 @@
-
-function addCart(id) {
-    const items = getCookie('items')
-    console.log(typeof items)
-    document.cookie = "items=" + JSON.stringify(items);
-
-}
+const sizeInputs = document.querySelectorAll('.item__sizes');
+const id_item = document.querySelector("#id_item");
 
 
+const form = document.querySelector('.item-form').addEventListener('submit', async (e) => {
+    e.preventDefault()
+    if (!id_item) {
+        return alert("Произошла ошибка")
+    }
 
-function clearCart() {
-    document.cookie = "items=" + JSON.stringify([]);
+    let size = ''
+    sizeInputs.forEach((sizeInput) => {
+        if (sizeInput.checked) {
+            size = sizeInput.dataset.size;
+        }
+    })
 
-}
+    const response = await fetch("./cart-item-api.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+
+        },
+        body: JSON.stringify({
+            "id_item": id_item.value,
+            "size": size
+        })
+    })
+
+    const answer = await response.json()
+    if (answer.type === 'succesful') {
+        alert(answer.message)
+    }
+    else {
+        alert(answer.message)
+    }
 
 
+})
 
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-}
 
-function setCookie(name, value) {
-    document.cookie = name + "=" + value + "; path=/";
-}

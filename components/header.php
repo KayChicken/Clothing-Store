@@ -1,14 +1,27 @@
 <?php
+session_start();
+include("./db.php");
+if (isset($_POST['logout'])) {
+    if ($_POST['logout'] == true) {
+        $_SESSION['id'] = [];
+        $_SESSION['user'] = [];
+    }
+}
 
-$cookie_name = "items";
-$cookie_value = json_encode([]); 
-$expire_time = time() + (7 * 24 * 60 * 60); 
 
-if (!isset($_COOKIE['items'])) {
-    // Если кука не существует, то создаем её
-    setcookie($cookie_name, $cookie_value, $expire_time, '/');
 
-} 
+if (isset($_SESSION['id'])) {
+    $id_user = $_SESSION['id'];
+    $user_query = mysqli_query($db, "SELECT * FROM user WHERE id = '$id_user'");
+    if (mysqli_num_rows($user_query) > 0) {
+        $user = mysqli_fetch_assoc($user_query);
+        $_SESSION['user'] = $user;
+    }
+}
+
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
 
 ?>
 
@@ -49,6 +62,25 @@ if (!isset($_COOKIE['items'])) {
                     </li>
 
                 </ul>
+                <?php
+                if (!empty($_SESSION['user'])) {
+                    echo "<div>{$_SESSION['user']['username']}</div>";
+                    echo "
+                        <form action='/' method='POST'>
+                            <input name='logout' value='true' hidden/>
+                            <button type='submit'/>Выход</button>
+                        </form>
+                    ";
+                  
+                    if ($_SESSION['user']['role'] == 2) {
+                        echo "<a href='./admin.php'>Admin panel</a>";
+                    }
+                } else {
+                    echo "<a href='./login.php'>Авторизация</a>";
+
+                }
+                ?>
+
                 <a href="./cart.php">
                     <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path

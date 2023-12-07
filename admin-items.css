@@ -1,0 +1,56 @@
+.admin-item-form {
+    max-width: 450px;
+    width: 100%;
+}
+
+
+.admin-item-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.items-sizes {
+    display: flex;
+    column-gap: 15px;
+}
+
+.items-sizes label {
+    margin-right: 5px;
+}
+
+
+input {
+    width: 100%;
+    padding: 10px; 
+    box-sizing: border-box;
+}
+
+
+
+
+.input-block.error .input-error {
+    display: block;
+}
+
+.input-block.error .input-data {
+    border: 1px solid #c72626;;
+}
+
+
+.input-block.valid .input-data {
+    border: 1px solid green;
+}
+
+
+
+.input-error {
+    display: none;
+    color : #c72626;
+}
+
+
+.create-btn {
+    margin-top: 25px;
+}

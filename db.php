@@ -1,14 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "shopBD";
+    $db = mysqli_connect("localhost", "root", "");
+    mysqli_select_db($db, "shop");
+    mysqli_set_charset($db, "utf8");
 
-// Создание подключения
-$mysql = new mysqli($servername, $username, $password, $dbname);
-
-// Проверка подключения
-if ($conn->connect_error) {
-    die("Ошибка подключения к базе данных: " . $conn->connect_error);
-}
 ?>

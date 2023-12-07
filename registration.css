@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+.registration {
+    font-family: 'Ubuntu', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.form-registration {
+    max-width: 390px;
+    width: 100%;
+}
+
+.registration-title {
+    font-size: 1.875rem;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.registration-input {
+    margin-top: 25px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #8f8fa1;
+    line-height: 1.2;
+    font-weight: 700;
+    line-height: 1.2;
+    border-radius: 5px;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    background: 0 0;
+    height: 62px;
+    padding: 0 20px 0 38px;
+    outline: none;
+    border: none;
+    background-color: #e6e6e6;
+}
+
+
+.registration-input::placeholder {
+    color: #8f8fa1;
+}
+
+
+
+
+.registration-btn {
+
+    display: block;
+    font-weight: 700;
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 5px;
+    cursor: pointer;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    outline: none;
+    border: none;
+    justify-content: center;
+    background-color: #827ffe;
+    text-transform: uppercase;
+    color : white;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.2;
+    align-items: center;
+    height: 62px;
+    padding : 0 20px;
+    transition: background-color 0.3s ease-in-out;
+
+}
+
+
+.registration-btn:nth-child(2) {
+    background-color: #78a0f8;
+}
+
+
+.registration-btn:hover{
+    background-color: #4c49d1;
+}
+
+
+.registration-btns {
+    margin-top: 30px;
+}
+
+
+.input-block {
+    position: relative;
+}
+
+.input-block.error .error-message{
+    display: block;
+}
+
+
+.error-message {
+    bottom: -18px;
+    color: #d1495b;
+    display: none;
+    position: absolute;
+}
+
+
+
+.input-block.valid .registration-input {
+    border: 1px solid #49d15b;
+}
+
+

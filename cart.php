@@ -20,8 +20,15 @@
 
 <body>
     <?php
+
+    session_start();
     require('./components/header.php');
     require('./db.php');
+    if (isset($_POST['clear'])) {
+        if ($_POST['clear'] == true) {
+            $_SESSION['cart'] = [];
+        }
+    }
     ?>
     <main>
         <section class='cart'>
@@ -30,27 +37,36 @@
                 <div class="cart__content">
                     <div class="cart__item">
                         <?php
-                            if (!isset($_COOKIE['items'])) {
-                            
-                                echo "Корзина пустая";
-                            } else {
-                             
-                                $items = unserialize($_COOKIE['items']);
-                                $idList = implode(',', $items);
-                                $result = $mysql->query("SELECT * FROM clothes WHERE id IN ({$idList})");
-                                while ($row = $result->fetch_assoc()) {
-                                    echo "<div>{$row['title']}</div>";
-                                    echo "<div>\$ {$row['price']}</div>";
+
+                        if (isset($_SESSION['cart'])) {
+                            foreach ($_SESSION['cart'] as $item) {
+                                if (is_array($item)) {
+                                    echo "
+                                        <h3>{$item['title']}</h3>
+                                        <img class='cart-img' src='./img/products/{$item['img']}' />
+                                        <div>{$item['description']}</div>
+                                        <div>{$item['compound']}</div>
+                                        <div>{$item['price']}</div>
+                                        <div>Выбранный размер : {$item['size']}</div>
+                                        <div>Количество : 1</div>
+                                        <button class='remove-item' >Убрать из корзины</button>
+                                        
+                                    ";
                                 }
 
 
                             }
+                        }
 
-            
                         ?>
                     </div>
                 </div>
-                <button onclick="clearCart()">Remove Cart</button>
+                <form action="/cart.php" method='POST'>
+                    <input type="text" name="clear" value="true" hidden>
+                    <button class="buy-items">Сделать заказ</button>
+                    <button type="sumbit" class="clear-cart">Clear Cart</button>
+                </form>
+
             </div>
         </section>
     </main>

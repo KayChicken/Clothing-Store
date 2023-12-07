@@ -1,3 +1,5 @@
+
+
 section {
     margin-top: 50px;
     margin-bottom: 200px;
@@ -34,7 +36,7 @@ section {
     margin-top: 20px;
 }
 
-.item__details h2{
+.item__details h2 {
     font-size: 1.8rem;
     font-weight: 500;
 }
@@ -43,7 +45,7 @@ section {
 .item__details p {
     margin-top: 20px;
     font-size: 1.2rem;
-    color : #5e5652;
+    color: #5e5652;
 }
 
 
@@ -53,21 +55,21 @@ section {
     cursor: pointer;
     margin-top: 20px;
     display: block;
-    padding : 10px 15px;
+    padding: 10px 15px;
     background-color: #098176;
     border: none;
-    color : #fff;
+    color: #fff;
     font-weight: 800;
-    
+
 }
 
 
 .item__col:nth-child(1) {
-    flex: 0 1 45%; 
-  }
-  
-  .item__col:nth-child(2) { 
-    flex: 0 1 50%; 
+    flex: 0 1 45%;
+}
+
+.item__col:nth-child(2) {
+    flex: 0 1 50%;
 }
 
 
@@ -77,9 +79,10 @@ section {
 }
 
 
-.item__sizes {
+.item__sizes__block {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 15px;
     column-gap: 10px;
     row-gap: 10px;
 }
@@ -94,15 +97,61 @@ section {
     background-color: #ebebeb;
     cursor: pointer;
     border-radius: 5px;
-    color : #d3d4dd;;
+    color: #d3d4dd;
     width: 40px;
     height: 40px;
 
 }
 
-.active {
-    color : #fff;
-    font-weight: 700;
-    
-    background-color: #098176;
+
+
+
+.item__sizes__block input[type="radio"] {
+    position: relative;
+    display: flex;
+    font-size: 1.1rem;
+    margin-top: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    color: #d3d4dd;
+    background-color: #ebebeb;
+
 }
+
+.active {
+    color: #fff !important;
+    font-weight: 700;
+    background-color: #098176 !important;
+   
+}
+
+.item__sizes__block input[type="radio"]::before {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    content: attr(data-size);
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+}
+
+.item__sizes__block  input[type="radio"]:checked::before {
+    color: #fff;
+    font-weight: 700;
+    border: 1px solid black;
+}
+
+

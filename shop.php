@@ -28,12 +28,12 @@
                     <p class="products__collection">Best Clothes Ever</p>
                     <div class="products__container">
                         <?php
-                        $clothes = $mysql->query("SELECT * FROM clothes");
-                        while ($row = $clothes->fetch_assoc()) {
+                        $items = mysqli_query($db, "SELECT * FROM item");
+                        while ($row = mysqli_fetch_array($items)) {
                             echo "
-                                <a href='./fullItem.php?item={$row['id']}'>
+                                <a href='./fullItem.php?id_item={$row['id_item']}'>
                                     <div class='product__card'>
-                                        <img src='./img/products/{$row['image']}.jpg' alt='{$row['title']}.jpg'>
+                                        <img src='./img/products/{$row['img']}' alt='{$row['title']}.jpg'>
                                         <p class='product__brand'>{$row['brand']}</p>
                                         <h2 class='product__title'>{$row['title']}</h2>
                                         <div class='product__stars'>

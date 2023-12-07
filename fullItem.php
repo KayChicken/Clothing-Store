@@ -1,15 +1,3 @@
-<?php
-    if(isset($_POST['add_to_cart'])) {
-        $items = unserialize($_COOKIE['items']);
-        $item = $_GET['item'];
-        $items[] = $item;
-        setcookie('items', serialize($items), time() + 3600, '/');
-    }
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,58 +23,70 @@
     <main>
         <section>
             <div class="container">
-                <div class="full__item">
-                    <?php
+                <form class="item-form">
+                    <div class="full__item">
+                        <?php
 
-                    if (isset($_GET['item'])) {
-                        $itemId = $_GET['item'];
-                        $item = $mysql->query("SELECT * FROM clothes WHERE id = $itemId");
-                        if ($item->num_rows > 0) {
-                            while ($row = $item->fetch_assoc()) {
-                                echo "
+                        if (isset($_GET['id_item'])) {
+                            $itemId = $_GET['id_item'];
+                            $item = mysqli_query($db, "SELECT * FROM item WHERE id_item = '$itemId'");
+                            if (mysqli_num_rows($item) > 0) {
+                                while ($row = mysqli_fetch_assoc($item)) {
+                                    echo "
                             <div class='item__col'>
-                                <img class='item__img' src='./img/products/{$row['image']}.jpg' alt='dsa'>
+                                <img class='item__img' src='./img/products/{$row['img']}' alt='item.png'>
                             </div>
                             <div class='item__col'>
-                                <h1 class='item__title'>{$row['title']}</h1>
-                                <h2 class='item__price'>\${$row['price']}</h2>
-                                <div class='item__sizes'>
+                                <h1 class='item__title' id='item-title'>{$row['title']}</h1>
+                                <h2 class='item__price' id='item-price'>\${$row['price']}</h2>
+                                <div class='item__sizes__block'>
                                 ";
-                                $sizes_from_db = array();
-                                $all_sizes = array('M',"L","XL","XLL");
-                                $result = $mysql->query("SELECT size FROM clothes_sizes JOIN sizes ON sizes.id = clothes_sizes.fk_size AND clothes_sizes.fk_clothes = $itemId");
-                                while ($size = $result->fetch_assoc()) {
-                                    $sizes_from_db[] = $size['size'];
-                                };
-                                
-                                foreach($all_sizes as $size) {
-                                    $class = in_array($size, $sizes_from_db) ? 'active' : '';
-                                    echo "<div class='item__size {$class}'>{$size}</div>";
-                                };
-                               
-                                echo "
+                                    $sizes_from_db = array();
+                                    $all_sizes = array('XS','S', 'M', "L", "XL", "XLL");
+                                    $result = mysqli_query($db, "SELECT size FROM item_sizes JOIN sizes ON sizes.id = item_sizes.fk_size_id WHERE item_sizes.fk_item_id = '$itemId'");
+                                    while ($size = $result->fetch_assoc()) {
+                                        $sizes_from_db[] = $size['size'];
+                                    }
+                                    ;
+
+                                    foreach ($all_sizes as $size) {
+                                        $class = in_array($size, $sizes_from_db);
+                                        if ($class) {
+                                            echo "<input type='radio' class='item__sizes active' name='size' value='{$size}' data-size='{$size}'/>";
+                                        } else {
+                                            echo "<input type='radio' class='item__sizes' name='size' value='{$size}' data-size='{$size}' disabled />";
+                                        }
+
+
+
+
+                                    }
+                                    ;
+
+                                    echo "
                                 </div>
-                                <form method='post' action=''>
-                                    <input class='add__cart' type='submit' value='Add To Cart' name='add_to_cart'>
-                                </form>
+                                <button class='add__cart'>Add Cart</button>
                                 <div class='item__details'>
                                     <h2>Product Details</h2>
-                                    <p>{$row['details']}</p>
+                                    <p id='item-brand'>{$row['brand']}</p>
+                                    <p id='item-compund'>{$row['compound']}</p>
                                 </div>
-                            </div>
-                                    ";
                                 
+                            </div>";
+                            echo "<input type='number' id='id_item' name='id_item' value='{$itemId}' hidden>";
+
+                                }
+                            } else {
+                                echo 'Ничего не найдено!';
                             }
+
                         } else {
-                            echo 'Ничего не найдено!';
+                            echo ("Ничего не найдено!");
                         }
+                        ?>
 
-                    } else {
-                        print_r("Ничего не найдено!");
-                    }
-                    ?>
-
-                </div>
+                    </div>
+                </form>
             </div>
         </section>
 

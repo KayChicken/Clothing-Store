@@ -1,0 +1,43 @@
+.change-products__container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    justify-content: space-between;
+    row-gap: 20px;
+    column-gap: 15px;
+
+}
+
+
+
+
+.change-product-card {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+
+.change-product-card.choosen{
+    border: 1px solid lightcoral;
+    border-radius: 10px;
+}
+
+
+.change-item-img {
+    width: 120px;
+
+}
+
+.change-item-title {
+    font-size: 1rem;
+
+}
+
+
+#num-items {
+    margin-top: 30px;
+}
