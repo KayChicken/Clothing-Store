@@ -98,7 +98,7 @@ if (!isset($_SESSION['cart'])) {
                     ";
 
                         if ($_SESSION['user']['role'] == 2) {
-                            echo "<a href='./admin.php'>Admin panel</a>";
+                            echo "<a href='./admin.php' class='admin-panel'>Admin panel</a>";
                         }
                     } else {
                         echo "<a href='./login.php' class='login-btn'>Log In</a>";

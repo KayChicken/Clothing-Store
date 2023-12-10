@@ -108,6 +108,38 @@ li {
 
 }
 
+.admin-panel__navigation {
+    margin-top: 10px;
+}
+
+.admin-panel__li {
+    margin-top: 15px;
+}
+
+.admin-panel-title {
+    margin-top: 15px;
+}
+
+
+.admin-panel__link {
+
+    font-size: 1.3rem;
+}
+
+.admin-panel {
+    border: 1px solid #3585cb;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+    background-color: #3585cb;
+}
+
+
+.items-panel-title {
+    margin-top: 15px;
+}
+
+
 
 .login-btn {
     font-weight: 500;
@@ -310,11 +342,11 @@ li {
     cursor: pointer;
     font-size: 0.85rem;
     border: transparent;
-    margin-top  : 15px !important;
+    margin-top: 15px !important;
     margin-bottom: 15px;
     background-color: #af2b2b;
-    color : #fff;
-    padding : 5px;
+    color: #fff;
+    padding: 5px;
     border-radius: 5px;
     outline: none;
 }
@@ -792,8 +824,39 @@ footer {
     border: transparent;
     margin-bottom: 15px;
     background-color: #af2b2b;
-    color : #fff;
-    padding : 5px;
+    color: #fff;
+    padding: 5px;
     border-radius: 5px;
     outline: none;
+}
+
+
+
+.search-item[type="text"],
+.search-item-select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-btn {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 500;
+    margin-top: 15px;
+    background-color: #098176;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+   
+    font-size: 1rem;
+}
+
+.search-input {
+    margin-top: 15px;
 }

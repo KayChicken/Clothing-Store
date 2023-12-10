@@ -39,18 +39,21 @@
                 <div class="products__content">
                     <h1 class="products__feature">Our Products</h1>
                     <p class="products__collection">Best Clothes Ever</p>
-                    <form method="GET" action="">
-                        <label for="search">Search:</label>
-                        <input type="text" name="search" id="search"
-                            value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>">
+                    <form method="GET" action="" class="form-search">
+                        <div class='search-input'>
+                            <label for="search">Search:</label>
+                            <input type="text" name="search" id="search" class='search-item'
+                                value="<?php echo isset($_GET['search']) ? $_GET['search'] : ''; ?>">
+                        </div>
+                        <div class='search-input'>
+                            <label for="sort">Sort by:</label>
+                            <select name="sort" id="sort" class='search-item-select'>
+                                <option value="asc" class="search-item-select__option">Price Low to High</option>
+                                <option value="desc" class="search-item-select__option">Price High to Low</option>
+                            </select>
 
-                        <label for="sort">Sort by:</label>
-                        <select name="sort" id="sort">
-                            <option value="asc">Price Low to High</option>
-                            <option value="desc">Price High to Low</option>
-                        </select>
-
-                        <input type="submit" value="Apply">
+                        </div>
+                        <input type="submit" class="search-btn" value="Search">
                     </form>
                     <div class="products__container">
                         <?php
