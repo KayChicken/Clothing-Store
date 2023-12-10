@@ -42,24 +42,22 @@
                                 <div class='item__sizes__block'>
                                 ";
                                     $sizes_from_db = array();
-                                    $all_sizes = array('XS','S', 'M', "L", "XL", "XLL");
-                                    $result = mysqli_query($db, "SELECT size FROM item_sizes JOIN sizes ON sizes.id = item_sizes.fk_size_id WHERE item_sizes.fk_item_id = '$itemId'");
-                                    while ($size = $result->fetch_assoc()) {
-                                        $sizes_from_db[] = $size['size'];
+                                    $all_sizes = array('XS', 'S', 'M', "L", "XL", "XLL");
+                                    $result = mysqli_query($db, "SELECT size, sizes.id AS size_id FROM item_sizes JOIN sizes ON sizes.id = item_sizes.fk_size_id WHERE item_sizes.fk_item_id = '$itemId'");
+
+                                    while ($row = $result->fetch_assoc()) {
+                                        $sizes_from_db[$row['size']] = $row['size_id'];
                                     }
-                                    ;
 
                                     foreach ($all_sizes as $size) {
-                                        $class = in_array($size, $sizes_from_db);
+                                        $class = array_key_exists($size, $sizes_from_db);
+                                        $size_id = $class ? $sizes_from_db[$size] : null;
+
                                         if ($class) {
-                                            echo "<input type='radio' class='item__sizes active' name='size' value='{$size}' data-size='{$size}'/>";
+                                            echo "<input type='radio' class='item__sizes active' name='size' value='{$size}' data-size='{$size}' data-id='{$size_id}'/>";
                                         } else {
                                             echo "<input type='radio' class='item__sizes' name='size' value='{$size}' data-size='{$size}' disabled />";
                                         }
-
-
-
-
                                     }
                                     ;
 
@@ -73,7 +71,7 @@
                                 </div>
                                 
                             </div>";
-                            echo "<input type='number' id='id_item' name='id_item' value='{$itemId}' hidden>";
+                                    echo "<input type='number' id='id_item' name='id_item' value='{$itemId}' hidden>";
 
                                 }
                             } else {

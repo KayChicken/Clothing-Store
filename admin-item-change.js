@@ -6,6 +6,8 @@ const brand = document.querySelector("#brand");
 const compound = document.querySelector("#compound");
 const sizes = document.querySelectorAll(".sizes-checkbox")
 const price = document.querySelector("#price");
+const imgInput = document.querySelector("#fileToUpload");
+const uploadBtn = document.querySelector('#btn-upload')
 
 const form = document.querySelector('.admin-item-form').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -21,14 +23,14 @@ const form = document.querySelector('.admin-item-form').addEventListener('submit
 
             },
             body: JSON.stringify({
-                "id_item" : id_item.value,
+                "id_item": id_item.value,
                 "title": title.value,
-                "description" : description.value,
-                'img' : img.value,
-                'brand' : brand.value,
-                'compound' : compound.value,
-                'price' : price.value,
-                'sizes' : size
+                "description": description.value,
+                'img': img.value,
+                'brand': brand.value,
+                'compound': compound.value,
+                'price': price.value,
+                'sizes': size
 
 
             }),
@@ -36,7 +38,7 @@ const form = document.querySelector('.admin-item-form').addEventListener('submit
         const data = await response.json();
         if (data.type === 'succesful') {
             alert(data.message)
-           
+
         }
         else {
             alert(data.message)
@@ -48,6 +50,39 @@ const form = document.querySelector('.admin-item-form').addEventListener('submit
 
 })
 
+
+uploadBtn.addEventListener("click" , async (e) => {
+    e.preventDefault()
+    const newNameFile = await newImg(imgInput)
+    const name = await newNameFile
+    if (name) {
+        img.value = name
+    }   
+})
+
+
+const newImg = async (input) => {
+    if (input.files.length > 0) {
+        const formData = new FormData();
+        formData.append('img', imgInput.files[0]);
+        const response = await fetch("./save-img-api.php", {
+            method: "POST",
+            body: formData
+        })
+        const data = await response.json();
+        if (data.type === 'succesful') {
+            return (data.message)
+
+        }
+        else {
+            return(null)
+        }
+
+    }
+    else {
+        return
+    }
+}
 
 
 const checkRequired = (inputs) => {
@@ -61,7 +96,7 @@ const checkRequired = (inputs) => {
             showValid(input)
         }
     })
-    if (!valid) {return false}
+    if (!valid) { return false }
     return true
 }
 
@@ -89,6 +124,3 @@ const showValid = (input) => {
     const parent = input.parentElement;
     parent.className = 'input-block valid';
 }
-
-
-

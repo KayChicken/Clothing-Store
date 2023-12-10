@@ -24,10 +24,11 @@
     session_start();
     require('./components/header.php');
     require('./db.php');
-    if (isset($_POST['clear'])) {
-        if ($_POST['clear'] == true) {
-            $_SESSION['cart'] = [];
-        }
+    if (isset($_POST['clear']) && isset($_SESSION['id'])) {
+        $user_id = $_SESSION['id'];
+        $cart_id_query = mysqli_query($db, "SELECT * FROM shopping_cart WHERE id_user = '$user_id'");
+        $cart_id = mysqli_fetch_assoc($cart_id_query)['id'];
+        $delete_cart = mysqli_query($db, "DELETE FROM shopping_cart_item WHERE cart_id = $cart_id");
     }
     ?>
     <main>
@@ -35,45 +36,68 @@
             <div class="container">
                 <h1>Cart</h1>
                 <div class="cart__content">
-                    <div class="cart__item">
-                        <?php
+                    <?php
+                    if (isset($_SESSION['id'])) {
+                        $id_user = $_SESSION['id'];
+                        $cartItems = mysqli_query($db, "SELECT * FROM `shopping_cart` 
+                        JOIN shopping_cart_item ON shopping_cart_item.cart_id = shopping_cart.id
+                        JOIN item ON item.id_item = shopping_cart_item.product_item_id
+                        JOIN sizes ON sizes.id = shopping_cart_item.size_id
+                        WHERE id_user = $id_user");
 
-                        if (isset($_SESSION['cart'])) {
-                            foreach ($_SESSION['cart'] as $item) {
-                                if (is_array($item)) {
-                                    echo "
-                                        <h3>{$item['title']}</h3>
-                                        <img class='cart-img' src='./img/products/{$item['img']}' />
-                                        <div>{$item['description']}</div>
-                                        <div>{$item['compound']}</div>
-                                        <div>{$item['price']}</div>
-                                        <div>Выбранный размер : {$item['size']}</div>
-                                        <div>Количество : 1</div>
-                                        <button class='remove-item' >Убрать из корзины</button>
-                                        
-                                    ";
-                                }
+                        while ($item = mysqli_fetch_array($cartItems)) {
 
+                            echo "
+                                        <div class='cart__item'>
+                                            <h3>{$item['title']}</h3>
+                                            <img class='cart-img' src='./img/products/{$item['img']}' />
+                                            <div>{$item['description']}</div>
+                                            <div>{$item['compound']}</div>
+                                            <div>Price : " . ($item['qty'] * $item['price']) . '$' . "</div>
+                                            <div>Choose Size : {$item['size']}</div>
+                                            <div>Quantity : {$item['qty']}</div>
+                                            <button class='remove-item' data-id='{$item['id_item']}' data-size='{$item[14]}'>Remove</button>
 
-                            }
+                                           
+                                        </div>
+                                        ";
+
                         }
 
-                        ?>
-                    </div>
-                </div>
-                <form action="/cart.php" method='POST'>
-                    <input type="text" name="clear" value="true" hidden>
-                    <button class="buy-items">Сделать заказ</button>
-                    <button type="sumbit" class="clear-cart">Clear Cart</button>
-                </form>
+                    } else {
+                        echo "<div style='font-size: 1.2rem;'>You are not authorized ☹️</div>";
+                    }
 
+                    ?>
+
+                </div>
+                <?php
+                if (isset($_SESSION['id'])) {
+                    if (mysqli_num_rows($cartItems) > 0) {
+                        echo "
+                        <form action='/cart.php' method='POST' class='remove-items'>
+                        <input type='text' name='clear' value='true' hidden>
+                        <a href='./checkout.php' class='buy-items'>Checkout</a>
+                        <button type='sumbit' class='clear-cart'>Clear Cart</button>
+                        </form>
+                        ";
+                    }
+                    
+                    else {
+                        echo "<div>Cart is empty ☹️</div>";
+                    }
+
+                }
+                ?>
+
+                
             </div>
         </section>
     </main>
     <?php
     require('./components/footer.php');
     ?>
-    <script src="cart.js"></script>
+    <script src="cart-remove.js"></script>
 </body>
 
 </html>

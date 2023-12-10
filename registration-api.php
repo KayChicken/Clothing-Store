@@ -13,6 +13,7 @@ try {
             $passwordHash = password_hash($password, PASSWORD_BCRYPT);
             $createUser = mysqli_query($db, "INSERT INTO user (username,login,password) VALUES ('$username','$login','$passwordHash')");
             $lastInsertedId = mysqli_insert_id($db);
+            $newCart = mysqli_query($db , "INSERT INTO shopping_cart (id_user) VALUES ('$lastInsertedId')");
             $_SESSION['id'] = $lastInsertedId;
             echo json_encode(array('type' => 'succesful','message' => 'Пользователь успешно создан!'));
         }

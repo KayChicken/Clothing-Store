@@ -17,6 +17,10 @@ body {
 }
 
 
+button {
+    font-family: 'League Spartan', sans-serif;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -24,7 +28,6 @@ a {
 
 
 li {
-    margin-right: 20px;
     list-style: none;
 }
 
@@ -57,8 +60,17 @@ li {
 }
 
 
+.header__navigation ul li {
+    margin-right: 20px;
+}
+
+.header__navigation ul li:last-child {
+    margin-right: 0;
+}
+
 .header__navigation {
     display: flex;
+    align-items: center;
 }
 
 
@@ -66,6 +78,8 @@ li {
     display: flex;
     align-items: center;
 }
+
+
 
 .header__navigation ul a {
     position: relative;
@@ -90,10 +104,49 @@ li {
     bottom: -4px;
     left: 0;
     background-color: #098176;
-    
+
 
 }
 
+
+.login-btn {
+    font-weight: 500;
+    background-color: #098176;
+    color: #fff;
+    border: 1px solid #098176;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+
+.exit-btn {
+    cursor: pointer;
+    font-weight: 500;
+    background-color: #098176;
+    color: #fff;
+    border: 1px solid #098176;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+
+.cart-btn {
+    margin-right: 15px;
+}
+
+
+.buy-items {
+    cursor: pointer;
+    font-weight: 500;
+    background-color: #098176;
+    color: #fff;
+    border: 1px solid #098176;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
 
 .hero {
     overflow: hidden;
@@ -238,6 +291,46 @@ li {
 
 
 
+.authorize {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+
+
+
+.remove-items {
+
+    margin-bottom: 15px;
+}
+
+
+.remove-item {
+    cursor: pointer;
+    font-size: 0.85rem;
+    border: transparent;
+    margin-top  : 15px !important;
+    margin-bottom: 15px;
+    background-color: #af2b2b;
+    color : #fff;
+    padding : 5px;
+    border-radius: 5px;
+    outline: none;
+}
+
+
+
+
+.username {
+    margin-right: 5px;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.logout {
+    margin-right: 10px;
+}
 
 .products {
     background-color: #fff;
@@ -274,6 +367,7 @@ li {
     transition: box-shadow 0.2s ease-in-out;
 
 }
+
 
 
 .product__card:hover {
@@ -541,10 +635,10 @@ li {
     margin-top: 100px;
     background-image: url('./img/b14.png');
     width: 100%;
-    background-color:#031839;
+    background-color: #031839;
     height: 20vh;
-   
-   
+
+
 }
 
 
@@ -562,7 +656,7 @@ li {
 }
 
 .newsletters__col span {
-    color : #f5d751;
+    color: #f5d751;
 }
 
 
@@ -592,7 +686,7 @@ li {
 .newsletters__input {
     height: 3.125rem;
     width: 100%;
-    padding : 0 1.25em;
+    padding: 0 1.25em;
     border-radius: 5px;
     border: 0;
     outline: none;
@@ -603,9 +697,9 @@ li {
 
 .newsletters__form button {
     cursor: pointer;
-    color : #fff;
+    color: #fff;
     font-weight: 700;
-    padding : 10px 20px;
+    padding: 10px 20px;
     background-color: #098176;
     white-space: nowrap;
     border: 0;
@@ -616,7 +710,7 @@ li {
 
 
 footer {
-   padding-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 
@@ -644,14 +738,14 @@ footer {
 }
 
 .footer__content .col p {
-    
+
     margin-bottom: 10px;
 
 }
 
 
 .footer__content .col p span {
-    
+
     font-weight: 700;
 
 }
@@ -692,10 +786,14 @@ footer {
 
 
 .clear-cart {
+    font-size: 0.9rem;
     margin-top: 60px;
+    cursor: pointer;
+    border: transparent;
+    margin-bottom: 15px;
+    background-color: #af2b2b;
+    color : #fff;
+    padding : 5px;
+    border-radius: 5px;
+    outline: none;
 }
-
-
-
-
-

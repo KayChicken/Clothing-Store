@@ -14,7 +14,7 @@ include('./components/header.php');
     <section class="section_admin">
         <div class="container">
             <h1>Create Item</h1>
-            <form action="/" method="POST" class='admin-item-form'>
+            <form action="/" method="POST" class='admin-item-form' enctype="multipart/form-data">
                 <div class="admin-item-container">
                     <div class="input-block">
                         <label for="title">Title</label>
@@ -27,8 +27,8 @@ include('./components/header.php');
                         <small class='input-error'></small>
                     </div>
                     <div class="input-block">
-                        <label for="img">Img</label>
-                        <input type="text" id='img' name="img" class='input-data'>
+                        <label for="fileToUpload">Img</label>
+                        <input type="file" name="fileToUpload" id="fileToUpload">
                         <small class='input-error'></small>
                     </div>
                     <div class="input-block">

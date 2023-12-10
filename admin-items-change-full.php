@@ -22,7 +22,9 @@
                     <div class="admin-item-container">
                         <div class="input-block">
                             <label for="title">ID</label>
-                            <div><?php echo $item['id_item']?></div>
+                            <div>
+                                <?php echo $item['id_item'] ?>
+                            </div>
                             <input type="text" id='id_item' name="id_item" class='input-data' hidden
                                 value='<?php echo $item['id_item']; ?>'>
                             <small class='input-error'></small>
@@ -42,6 +44,12 @@
                         <div class="input-block">
                             <label for="img">Img</label>
                             <input type="text" id='img' name="img" class='input-data' value='<?php echo $item['img']; ?>'>
+                            <small class='input-error'></small>
+                        </div>
+                        <div class="input-block">
+                            <label for="fileToUpload">Img</label>
+                            <input type="file" name="fileToUpload" id="fileToUpload">
+                            <button id='btn-upload' type='button'>Upload</button>
                             <small class='input-error'></small>
                         </div>
                         <div class="input-block">

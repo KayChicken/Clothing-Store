@@ -11,7 +11,7 @@ const form = document.querySelector('.item-form').addEventListener('submit', asy
     let size = ''
     sizeInputs.forEach((sizeInput) => {
         if (sizeInput.checked) {
-            size = sizeInput.dataset.size;
+            size = sizeInput.dataset.id;
         }
     })
 

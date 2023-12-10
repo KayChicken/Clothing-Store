@@ -60,6 +60,8 @@ section {
     border: none;
     color: #fff;
     font-weight: 800;
+    border-radius: 5px;
+    font-size: 1rem;
 
 }
 

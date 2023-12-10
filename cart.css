@@ -7,3 +7,8 @@
 .cart-img {
     width: 15%;
 }
+
+
+.cart__item > * {
+    margin-top: 5px;
+}   
