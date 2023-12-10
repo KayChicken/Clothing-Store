@@ -1,6 +1,6 @@
 <?php
 session_start();
-if ($_SESSION['user']['role'] != 2 ) {
+if ($_SESSION['user']['role'] != 2) {
     die("Нет доступа!");
 }
 include('./components/header.php');
@@ -19,20 +19,21 @@ include('./db.php')
         <div class="container">
             <?php
             $active_orders = mysqli_query($db, 'SELECT * FROM `cheques`
-                LEFT JOIN orders ON orders.cheque_id = cheques.id_cheque
-                WHERE cheques.status = 2 ');
+            LEFT JOIN orders ON orders.cheque_id = cheques.id_cheque
+            WHERE cheques.status = 2
+            ORDER BY cheques.id_cheque DESC');
             $currentChequeId = null;
             $total_price = 0;
             $count = mysqli_num_rows($active_orders);
             $next = 0;
             $flag = false;
             while ($row = mysqli_fetch_array($active_orders)) {
-           
+
                 if ($currentChequeId !== $row['id_cheque']) {
                     if ($total_price !== 0) {
                         echo "<p>Total Price: $total_price</p>";
-                    } 
-                   
+                    }
+
                     $total_price = 0;
                     echo "<h2 style='margin-top:50px;'>Name : {$row['full_name']}</h2>";
                     $currentChequeId = $row['id_cheque'];
@@ -51,13 +52,13 @@ include('./db.php')
                 if ($next === $count - 1) {
                     echo "<p>Total Price: $total_price</p>";
                     $total_price = 0;
-                } 
+                }
                 $next++;
 
 
 
-                
-                
+
+
             }
 
             ?>

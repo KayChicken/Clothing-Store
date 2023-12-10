@@ -45,8 +45,8 @@
                                     $all_sizes = array('XS', 'S', 'M', "L", "XL", "XLL");
                                     $result = mysqli_query($db, "SELECT size, sizes.id AS size_id FROM item_sizes JOIN sizes ON sizes.id = item_sizes.fk_size_id WHERE item_sizes.fk_item_id = '$itemId'");
 
-                                    while ($row = $result->fetch_assoc()) {
-                                        $sizes_from_db[$row['size']] = $row['size_id'];
+                                    while ($row_size = $result->fetch_assoc()) {
+                                        $sizes_from_db[$row_size['size']] = $row_size['size_id'];
                                     }
 
                                     foreach ($all_sizes as $size) {
@@ -66,8 +66,8 @@
                                 <button class='add__cart'>Add Cart</button>
                                 <div class='item__details'>
                                     <h2>Product Details</h2>
-                                    <p id='item-brand'>{$row['brand']}</p>
-                                    <p id='item-compund'>{$row['compound']}</p>
+                                    <p id='item-brand'>Brand : {$row['brand']}</p>
+                                    <p id='item-compund'>Compound : {$row['compound']}</p>
                                 </div>
                                 
                             </div>";
