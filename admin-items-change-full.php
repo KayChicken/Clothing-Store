@@ -7,6 +7,10 @@
 
 <body>
     <?php
+    session_start();
+    if ($_SESSION['user']['role'] != 2 ) {
+        die("Нет доступа!");
+    }
     include("./components/header.php");
     include("./db.php");
     if (isset($_GET['id_item'])) {

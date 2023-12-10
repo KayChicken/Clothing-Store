@@ -1,6 +1,9 @@
 <?php
+session_start();
+if ($_SESSION['user']['role'] != 2 ) {
+    die("Нет доступа!");
+}
 include('./components/header.php');
-
 ?>
 
 <head>

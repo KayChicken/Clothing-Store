@@ -5,6 +5,10 @@
 
 <body>
     <?php
+    session_start();
+    if ($_SESSION['user']['role'] != 2 ) {
+        die("Нет доступа!");
+    }
     include('./components/header.php');
     ?>
     <section class="change-products">
@@ -29,7 +33,7 @@
             <div id='num-items'>Choose items : 0</div>
             <button id='delete-btn'>Delete</button>
         </div>
-        
+
 
     </section>
     <script src='./admin-item-delete.js'></script>
